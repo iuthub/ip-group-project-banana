@@ -50,9 +50,15 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'regex:/^[a-zA-Z0-9_]{5,}$/'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'regex:/^[a-zA-Z0-9_$%\-_]{5,}$/', 'confirmed'],
+            'phone' => ['required', 'regex:/^\+99\d-\d{2}-\d{7}/'],
+            'date_of_birth' => ['required', 'regex:/^\d{2}-\d{2}-\d{4}$/'],
+            'postal_code' => ['required', 'regex:/^\d{7}$/'],
+            'city' => ['required', 'regex:/^[a-zA-z]*$/'],
+            'passport' => ['required' , 'regex:/^(A.)\d{7}/'],
+
         ]);
     }
 
@@ -68,6 +74,11 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'phone' => $data['phone'],
+            'date_of_birth' => $data['date_of_birth'],
+            'postal_code' => $data['postal_code'],
+            'city' => $data['city'],
+            'passport' => $data['passport'],
         ]);
     }
 }

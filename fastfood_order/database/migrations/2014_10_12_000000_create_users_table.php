@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->string('date_of_birth');
             $table->integer('postal_code');
-            $talbe->string('city');
+            $table->string('city');
             $table->string('passport');
             $table->rememberToken();
             $table->timestamps();
