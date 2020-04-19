@@ -81,7 +81,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    @if(Auth::user())
+                    {{ Auth::user()->roles->pluck('name') }}
+                    @endif
                 </div>
 
                 <div class="links">
