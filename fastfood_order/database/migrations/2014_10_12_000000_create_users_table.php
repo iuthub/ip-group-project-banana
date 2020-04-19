@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->integer('postal_code');
             $table->string('city');
             $table->string('passport');
+            $table->integer('role_id');
             $table->rememberToken();
             $table->timestamps();
         });
