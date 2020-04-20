@@ -129,11 +129,74 @@ return [
     |
     */
 
+    // 'custom' => [
+    //     'attribute-name' => [
+    //         'rule-name' => 'custom-message',
+    //     ],
+    // ],
+
+    // 'custom' => [
+    //     'name' => [
+    //         'regex' => 'The name format is invalid (at least 5 alphanumeric)',
+    //     ],
+    // ],
+
+    // 'custom' => [
+    //     'password' => [
+    //         'regex' => 'The password format is invalid (at least 5 alphanumeric)',
+    //     ],
+    // ],
+
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'phone' => [
+            'regex' => 'The phone format is invalid (e.g. +998-98-5152578)',
+        ],
+        'date_of_birth' => [
+            'regex' => 'The date of birth format is invalid (e.g. 01-10-1997)',
+        ],
+        'postal_code' => [
+            'regex' => 'The postal format is invalid (e.g. 130110 - 6 digits)',
+        ],
+        'city' => [
+            'regex' => 'The city format is invalid (e.g. Tashkent - no digits)',
+        ],
+        'password' => [
+            'regex' => 'The password format is invalid (at least 5 alphanumeric)',
+        ],
+        'name' => [
+            'regex' => 'The name format is invalid (at least 5 alphanumeric)',
+        ],
+        'role' => [
+            'regex' => 'The role format is invalid (e.g. 1 or 2)',
+        ],
+        'passport' => [
+            'regex' => 'The passport format is invalid (e.g. AB5376478)'
         ],
     ],
+
+    // 'custom' => [
+    //     'date_of_birth' => [
+    //         'regex' => 'The date of birth format is invalid (e.g. 01-10-1997)',
+    //     ],
+    // ],
+
+    // 'custom' => [
+    //     'postal code' => [
+    //         'regex' => 'The postal code format is invalid (e.g. 130110 - 6 digits)',
+    //     ],
+    // ],
+
+    // 'custom' => [
+    //     'city' => [
+    //         'regex' => 'The city format is invalid (e.g. Tashkent - no digits)',
+    //     ],
+    // ],
+
+    // 'custom' => [
+    //     'role' => [
+    //         'regex' => 'The role format is invalid (e.g. 1 or 2)',
+    //     ],
+    // ],
 
     /*
     |--------------------------------------------------------------------------
