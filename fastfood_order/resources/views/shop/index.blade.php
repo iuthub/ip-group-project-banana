@@ -19,6 +19,8 @@ Fast Food
         <li><a href="{{ route('register') }}" class="active">Sign Up</a></li>
         <li><a href="" class="active">Purchased</a></li>
         <li><a href="" class="active">Contact Us</a></li>
+        <li><a href="" class="active" data-toggle="modal" data-target="#Login">
+  Sign In</a></li>
         @else
         <li><a href="{{ route('shop.index') }}" class="active1">Home</a></li>
         <li><a href="{{ route('shop.products') }}" class="active">Menu</a></li>
@@ -59,6 +61,7 @@ Fast Food
         
 
 </main> -->
+
         <div class="news">
             <h2 class="h2">NEWS</h2>
             <div class="news_1">
@@ -131,110 +134,162 @@ Fast Food
     <p> Fast food © 2020.Privacy Policy</p>
 </footer>
 
+<!-- Modal -->
+<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Fast Food</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="text-center mt-3">
+      <h3>Login</h3>
+        </div>
+        <form method="POST" action="{{ route('login') }}">
+                        @csrf
+      <div class="modal-body my-4 text-center">
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+        <input type="email" name='email' id='email' class="form-control @error('email') is-invalid @enderror">
+        @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+        <input type="password" name='password' id='password' class='form-control'>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type='submit' class="btn btn-primary">Login</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+{{-- <!-- Modal -->
+<div class="modal fade" id="Register" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Fast Food</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="text-center mt-3">
+      <h3>Register</h3>
+        </div>
+        <form method="POST" action="{{ route('register') }}">
+                        @csrf
+      <div class="modal-body my-4 text-center" style="height:350px">
+        <div class="form-group">
+          <label for="name">Name:</label>
+        <input type="text" name='name' id='name' class="form-control @error('name') is-invalid @enderror">
+        @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+        <input type="password" name='password' id='password' class="form-control @error('password') is-invalid @enderror">
+        @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+        </div>
+        <div class="form-group">
+          <label for="password-confirm">Confirm Password:</label>
+        <input type="password" name='password_confirmation' id='password-confirm' class="form-control @error('password') is-invalid @enderror">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+        <input type="email" name='email' id='email' class="form-control @error('email') is-invalid @enderror">
+        @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+        <input type="text" name='phone' id='phone' class="form-control @error('phone') is-invalid @enderror">
+        @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+        </div>
+        <div class="form-group">
+          <label for="date_of_birth">Date of Birth:</label>
+        <input type="text" name='date_of_birth' id='date_of_birth' class="form-control @error('date_of_birth') is-invalid @enderror">
+        @error('date_of_birth')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+        </div>
+
+        <div class="form-group">
+          <label for="postal_code">Postal Code:</label>
+        <input type="text" name='postal_code' id='postal_code' class="form-control @error('postal_code') is-invalid @enderror">
+        @error('postal_code')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+        </div>
+
+        <div class="form-group">
+          <label for="city">City:</label>
+        <input type="text" name='city' id='city' class="form-control @error('city') is-invalid @enderror">
+        @error('city')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+        </div>
+
+         <div class="form-group">
+          <label for="passport">Passport:</label>
+        <input type="text" name='passport' id='passport' class="form-control @error('passport') is-invalid @enderror">
+        @error('passport')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+        </div>
+
+         <div class="form-group">
+          <label for="role_id">Role:</label>
+        <input type="role_id" name='role_id' id='role_id' class="form-control @error('role_id') is-invalid @enderror">
+        @error('role_id')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type='submit' class="btn btn-primary">Register</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div> --}}
 
 @endsection
-
-{{-- <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    @if(Auth::user())
-                    {{ Auth::user()->roles->pluck('name') }}
-                    @endif
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
- --}}
-
