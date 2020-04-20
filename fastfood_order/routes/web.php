@@ -13,10 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('shop.index');
+// });
+
+// Route::get('/products', function () {
+//     return view('shop.products');
+// });
+
+Route::get('/', 'ShopController@index')->name('shop.index');
+
+Route::get('/products', 'ShopController@products')->name('shop.products');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

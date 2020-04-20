@@ -1,41 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>FastFood</title>
-	<meta charset="utf-8">
-	
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+@extends('layouts.master')
+
+@section('title')
+Menu
+@endsection
+
+
+@section('content')
+
 
 <header>
 	<div class="name">
 		<h2>FAST FOOD</hs>
 	</div>
 	<nav class="main-nav">
-		<li><a href="index.html" class="active1">Home</a></li>
-		<li><a href="" class="active">Menu</a></li>
-    <li><a href="" class="active">Sign In</a></li>
-    <li><a href="" class="active">Purchased</a></li>
-		<li><a href="" class="active">Contact Us</a></li>
+    @if(!Auth::check())
+  		<li><a href="{{ route('shop.index') }}" class="active1">Home</a></li>
+      <li><a href="{{ route('login') }}" class="active">Sign In</a></li>
+      <li><a href="{{ route('register') }}" class="active">Sign Up</a></li>
+      <li><a href="" class="active">Purchased</a></li>
+  		<li><a href="" class="active">Contact Us</a></li>
+    @else
+      <li><a href="{{ route('shop.index') }}" class="active1">Home</a></li>
+      <li><a href="{{ Auth::logout() }}" class="active">Sign Out</a></li>
+      <li><a href="" class="active">Purchased</a></li>
+      <li><a href="" class="active">Contact Us</a></li>
+    @endif
 	</nav>
 </header>
 
 <main>
+    {{-- <div class="row">
+      <div class="col-md-4"> --}}
          <div class="gallery">
            	<div class="h2"><h2 c>MENU</h2></div> 
-            <div class="div"><img src="1.jpg"><h3>Toster 15000  so'm</h3><a href="">Purchase</a></div>
-            <div class="div"><img src="3.jpg"><h3>Combo 15000 so'm</h3><a href="">Purchase</a></div>
-            <div class="div"><img src="4.jpg"><h3>Donar 15000 so'm</h3><a href="">Purchase</a></div>
-            <div class="div"><img src="5.jpg"><h3>Combo 15000 so'm</h3><a href="">Purchase</a></div>
-            <div class="div"><img src="6.jpg"><h3>HotDog 15000 so'm</h3><a href="">Purchase</a></div>
-            <div class="div"><img src="4.jpg"><h3>Combo 15000 so'm</h3><a href="">Purchase</a></div>
-        	  <div class="div"><img src="1.jpg"><h3>HotDog 15000 so'm</h3><a href="">Purchase</a></div>
-            <div class="div"><img src="4.jpg"><h3>Donar 15000 so'm</h3><a href="">Purchase</a></div>
-            <div class="div"><img src="3.jpg"><h3>Combo 15000 so'm</h3><a href="">Purchase</a></div>
+            <div class="div"><img src="{{ URL::to('src/pics/1.jpg')}}"><h3>Toster 15000  so'm</h3><a href="">Purchase</a></div>
+            <div class="div"><img src="{{ URL::to('src/pics/3.jpg')}}"><h3>Combo 15000 so'm</h3><a href="">Purchase</a></div>
+            <div class="div"><img src="{{ URL::to('src/pics/4.jpg')}}"><h3>Donar 15000 so'm</h3><a href="">Purchase</a></div>
+            <div class="div"><img src="{{ URL::to('src/pics/5.jpg')}}"><h3>Combo 15000 so'm</h3><a href="">Purchase</a></div>
+            <div class="div"><img src="{{ URL::to('src/pics/6.jpg')}}"><h3>HotDog 15000 so'm</h3><a href="">Purchase</a></div>
+            <div class="div"><img src="{{ URL::to('src/pics/4.jpg')}}"><h3>Combo 15000 so'm</h3><a href="">Purchase</a></div>
+        	  <div class="div"><img src="{{ URL::to('src/pics/3.jpg')}}"><h3>HotDog 15000 so'm</h3><a href="">Purchase</a></div>
+            <div class="div"><img src="{{ URL::to('src/pics/4.jpg')}}"><h3>Donar 15000 so'm</h3><a href="">Purchase</a></div>
+            <div class="div"><img src="{{ URL::to('src/pics/3.jpg')}}"><h3>Combo 15000 so'm</h3><a href="">Purchase</a></div>
             <div class="clear"></div>
         </div>
+{{--         </div>
+    </div> --}}
 
         
 
@@ -78,13 +88,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="menu1.jpg" alt="First slide">
+      <img class="d-block w-100" src="{{ URL::to('src/pics/menu1.jpg')}}" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="menu2.jpg" alt="Second slide">
+      <img class="d-block w-100" src="{{ URL::to('src/pics/menu2.jpg')}}" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="wfwef.jpg" alt="Third slide">
+      <img class="d-block w-100" src="{{ URL::to('src/pics/wfwef.jpg')}}" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -125,9 +135,5 @@
 <footer>
     <p>  Fast food © 2020. Founded ProgBanana</p>
 </footer>
-</body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
 
-
-</html>
+@endsection
