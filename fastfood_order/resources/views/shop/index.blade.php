@@ -20,13 +20,14 @@ Fast Food
         <li><a href="" class="active">Purchased</a></li>
         <li><a href="" class="active">Contact Us</a></li>
         <li><a href="" class="active" data-toggle="modal" data-target="#Login">
-  Sign In</a></li>
+        Sign In</a></li>
         @else
         <li><a href="{{ route('shop.index') }}" class="active1">Home</a></li>
         <li><a href="{{ route('shop.products') }}" class="active">Menu</a></li>
-        <li><a href="{{ Auth::logout() }}" class="active">Sign Out</a></li>
+        <li><a href="{{ route('logout') }}" class="active">Sign Out</a></li>
         <li><a href="" class="active">Purchased</a></li>
         <li><a href="" class="active">Contact Us</a></li>
+        {{-- <li><a href="{{ route('cart.index') }}" class="active"><i class="fas fa-cart-arrow-down"></i></a></li> --}}
         @endif
     </nav>
 </header>

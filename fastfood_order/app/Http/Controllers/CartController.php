@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Cart;
 use App\Product;
 use Illuminate\Http\Request;
-use App\Cart;
-use Session;
 
-class ShopController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,23 +15,7 @@ class ShopController extends Controller
      */
     public function index()
     {
-        return view('shop.index');
-    }
-
-    public function products()
-    {
-        $products = Product::all();
-        return view('shop.products')->with('products', $products);
-    }
-
-    public function goToCart()
-    {
-        if(!Session::has('cart')){
-            return view('shop.shopping-cart');
-        }
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-        return view('shop.shopping-cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+        return view('cart.index');
     }
 
     /**
@@ -50,24 +34,19 @@ class ShopController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function getAddToCart(Request $request, $id)
+    public function store(Request $request, $id)
     {
         $product = Product::find($id);
-        $oldCart = Session::has('cart') ? Session::get('cart') : null;
-        $cart = new Cart($oldCart);
-        $cart->add($product, $product->id);
 
-        $request->session()->put('cart', $cart);
-        return redirect()->route('shop.products');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Cart $cart)
     {
         //
     }
@@ -75,10 +54,10 @@ class ShopController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Cart $cart)
     {
         //
     }
@@ -87,10 +66,10 @@ class ShopController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Cart $cart)
     {
         //
     }
@@ -98,10 +77,10 @@ class ShopController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Cart $cart)
     {
         //
     }
