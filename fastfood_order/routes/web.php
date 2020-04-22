@@ -21,11 +21,33 @@ use Illuminate\Support\Facades\Route;
 //     return view('shop.products');
 // });
 
-Route::get('/', 'ShopController@index')->name('shop.index');
+Route::get('/', [
+	'uses' => 'ShopController@index',
+	'as' => 'shop.index']);
 
-Route::get('/products', 'ShopController@products')->name('shop.products');
+Route::get('/products', [
+	'uses' => 'ShopController@products',
+	'as' => 'shop.products']);
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', [
+// 	'uses' => 'HomeController@index',
+// 	'as' => 'home']);
+
+Route::get('/cart', [
+	'uses' => 'CartController@index',
+	'as' => 'cart.index']);
+
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+
+Route::get('/add-to-cart/{id}', [
+	'uses' => 'ShopController@getAddToCart',
+	'as' => 'shop.addToCart',
+]);
+
+Route::get('/shopping-cart', [
+	'uses' => 'ShopController@goToCart',
+	'as' => 'shop.shoppingCart',
+]);
 
