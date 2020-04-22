@@ -5,6 +5,8 @@ use App\Product;
 use Illuminate\Http\Request;
 use App\Cart;
 use Session;
+use App\Order;
+use Auth;
 
 class ShopController extends Controller
 {
@@ -60,6 +62,33 @@ class ShopController extends Controller
         $request->session()->put('cart', $cart);
         return redirect()->route('shop.products');
     }
+
+
+
+
+
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $order = new Order();
+        $order->cart = serialize(Session::get('cart'));
+        $order->name = Auth::user()->name;
+        $order->address = $request->input('address');
+
+        Auth::user()->orders()->save($order);
+        Session::forget('cart');
+
+        return redirect('/products');
+    }
+
+
+
 
     /**
      * Display the specified resource.

@@ -51,3 +51,29 @@ Route::get('/shopping-cart', [
 	'as' => 'shop.shoppingCart',
 ]);
 
+Route::post('/store', [
+	'uses' => 'ShopController@store',
+	'as' => 'shop.store',
+]);
+
+Route::get('/profile', [
+	'uses' => 'UserController@index',
+	'as' => 'user.profile',
+]);
+
+Route::get('/dismiss', [
+	'uses' => 'UserController@dismiss',
+	'as' => 'user.dismiss',
+]);
+
+Route::get('/admin', [
+	'uses' => 'UserController@admin',
+	'as' => 'user.admin',
+]);
+
+Route::get('/admin/delete/{id}', [
+	'uses' => 'UserController@delete',
+	'as' => 'user.admin.delete',
+]);
+
+

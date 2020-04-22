@@ -17,14 +17,13 @@ Menu
   		<li><a href="{{ route('shop.index') }}" class="active1">Home</a></li>
       <li><a href="{{ route('login') }}" class="active">Sign In</a></li>
       <li><a href="{{ route('register') }}" class="active">Sign Up</a></li>
-      <li><a href="" class="active">Purchased</a></li>
   		<li><a href="" class="active">Contact Us</a></li>
       <li><a href="" class="active" data-toggle="modal" data-target="#Login">
       Sign In</a></li>
     @else
       <li><a href="{{ route('shop.index') }}" class="active1">Home</a></li>
       <li><a href="{{ route('logout') }}" class="active">Sign Out</a></li>
-      <li><a href="" class="active">Purchased</a></li>
+      <li><a href="{{ route('user.profile') }}" class="active">Profile</a></li>
       <li><a href="" class="active">Contact Us</a></li>
       <li><a href="{{ route('shop.shoppingCart') }}" class="active"><i class="fas fa-cart-arrow-down"></i><span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span></a></li>
     @endif
