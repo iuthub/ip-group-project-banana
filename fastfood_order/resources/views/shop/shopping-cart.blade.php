@@ -23,10 +23,10 @@ Cart
 </nav>
 	
 		@if(Session::has('cart'))
-			<div class="container">
-			<div class="row">
+			<div class="container" align->
+			<div class="row justify-content-center">
 				<div class="col-sm-6 col-md-6" >
-					<ul class="list-group">
+					<ul class="list-group my-3">
 						@foreach($products as $product)
 							<li class="list-group-item">
 								<span class="badge badge-info">{{ $product['qty'] }}</span>
@@ -43,20 +43,25 @@ Cart
 
 			</div>
 
-			<div class="row">
+			<div class="row justify-content-center">
 				<div class="col-sm-6 col-md-6" >
 					<strong>Total: {{ $totalPrice }}</strong>
 				</div>
 			</div>
 			<hr>
-			<div class="row">
-				<div class="col-sm-6 col-md-6" >
-					<button type="button" class="btn btn-success">Order</button>
+			<div class="row justify-content-center">
+				<div class="col-sm-6 col-md-6">
+					<form action="{{route('shop.store')}}" method="POST">
+						@csrf
+						<input type="text" name='address' class="form-control" placeholder="Enter delivery address">
+					<button type='submit' class="btn btn-success my-2">Order</button>
+					</form>
+					<a href="{{ route('user.dismiss') }}" class="btn btn-danger">Dismiss</a>
 				</div>
 			</div>
 
 		@else
-			<div class="row">
+			<div class="row justify-content-center">
 				<div class="col-sm-6 col-md-6" >
 					<h2>No items in cart</h2>
 				</div>
