@@ -59,6 +59,7 @@ class RegisterController extends Controller
             'postal_code' => ['required', 'regex:/^\d{6}$/'],
             'city' => ['required', 'regex:/^[a-zA-z]*$/'],
             'passport' => ['required' , 'regex:/^(A.)\d{7}/'],
+            'role_id' => ['required', 'regex:/^[12]$/'],
 
         ]);
     }

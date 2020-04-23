@@ -68,11 +68,13 @@ Route::get('/dismiss', [
 
 Route::get('/admin', [
 	'uses' => 'UserController@admin',
+	'middleware' => 'admin',
 	'as' => 'user.admin',
 ]);
 
 Route::get('/admin/delete/{id}', [
 	'uses' => 'UserController@delete',
+	'middleware' => 'admin',
 	'as' => 'user.admin.delete',
 ]);
 

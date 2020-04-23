@@ -24,6 +24,7 @@ Menu
       <li><a href="{{ route('shop.index') }}" class="active1">Home</a></li>
       <li><a href="{{ route('logout') }}" class="active">Sign Out</a></li>
       <li><a href="{{ route('user.profile') }}" class="active">Profile</a></li>
+      <li><a href="{{ route('user.admin') }}" class="active">Admin</a></li>
       <li><a href="" class="active">Contact Us</a></li>
       <li><a href="{{ route('shop.shoppingCart') }}" class="active"><i class="fas fa-cart-arrow-down"></i><span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span></a></li>
     @endif
