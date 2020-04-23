@@ -8,6 +8,9 @@
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/app.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/all.css') }}">
+
+  @yield('head')
+
 </head>
 <body>
 

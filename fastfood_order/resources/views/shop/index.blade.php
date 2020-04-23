@@ -25,7 +25,7 @@ Fast Food
         <li><a href="{{ route('logout') }}" class="active">Sign Out</a></li>
         <li><a href="{{ route('user.profile') }}" class="active">Profile</a></li>
         <li><a href="{{ route('user.admin') }}" class="active">Admin</a></li>
-        <li><a href="" class="active">Contact Us</a></li>
+        <li><a href="{{ route('shop.contact') }}" class="active">Contact Us</a></li>
         {{-- <li><a href="{{ route('cart.index') }}" class="active"><i class="fas fa-cart-arrow-down"></i></a></li> --}}
         @endif
     </nav>

@@ -87,6 +87,11 @@ class ShopController extends Controller
         return redirect('/products');
     }
 
+    public function contact(){
+
+        return view('shop.contacts');
+    }
+
 
 
 

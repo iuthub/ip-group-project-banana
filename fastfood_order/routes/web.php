@@ -78,4 +78,10 @@ Route::get('/admin/delete/{id}', [
 	'as' => 'user.admin.delete',
 ]);
 
+Route::get('/contact', [
+	'uses' => 'ShopController@contact',
+	'as' => 'shop.contact',
+]);
+
+
 
