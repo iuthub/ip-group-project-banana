@@ -166,11 +166,11 @@ return [
         'name' => [
             'regex' => 'The name format is invalid (at least 5 alphanumeric)',
         ],
-        'role' => [
-            'regex' => 'The role format is invalid (e.g. 1 or 2)',
+        'role_id' => [
+            'regex' => '1 - Administartor | 2 - Customer',
         ],
         'passport' => [
-            'regex' => 'The passport format is invalid (e.g. AB5376478)'
+            'regex' => 'The passport format is invalid (e.g. AB5376478)',
         ],
     ],
 
