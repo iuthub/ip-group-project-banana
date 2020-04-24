@@ -44,6 +44,11 @@
               <h2>Contact Us</h2>
            </div>
        </div>
+       @if(session()->has('message'))
+          <div class="alert alert-success text-center">
+            {{ session()->get('message') }}
+          </div>
+       @endif
 
   <div class="contacts">
        <div class="contact">

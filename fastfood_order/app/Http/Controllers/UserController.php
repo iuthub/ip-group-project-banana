@@ -28,6 +28,7 @@ class UserController extends Controller
 
     public function dismiss(){
     	Session::forget('cart');
+        session()->flash('message','Item is dismissed');
     	return redirect('/products');
     }
 
@@ -35,6 +36,8 @@ class UserController extends Controller
     	$order = Order::find($id);
 
     	$order->delete();
+
+        session()->flash('message', 'Order is deleted');
 
     	return redirect()->back();
     }

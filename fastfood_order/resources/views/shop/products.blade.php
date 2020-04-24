@@ -14,10 +14,10 @@ Menu
 	</div>
 	<nav class="main-nav">
     @if(!Auth::check())
-      <li><a href="{{ route('shop.index') }}" class="active1">Home</a></li>
+  		<li><a href="{{ route('shop.index') }}" class="active1">Home</a></li>
       <li><a href="{{ route('login') }}" class="active">Sign In</a></li>
       <li><a href="{{ route('register') }}" class="active">Sign Up</a></li>
-      <li><a href="{{ route('shop.contact') }}" class="active">Contact Us</a></li>
+  		<li><a href="" class="active">Contact Us</a></li>
       <li><a href="" class="active" data-toggle="modal" data-target="#Login">
       Sign In</a></li>
     @else
@@ -28,7 +28,7 @@ Menu
       <li><a href="{{ route('shop.contact') }}" class="active">Contact Us</a></li>
       <li><a href="{{ route('shop.shoppingCart') }}" class="active"><i class="fas fa-cart-arrow-down"></i><span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span></a></li>
     @endif
-  </nav>
+	</nav>
 </header>
 
 <main>
@@ -55,7 +55,12 @@ Menu
         {{-- </div> --}}
         @else
         <div class="gallery">
-            <div class="h2"><h2 c>MENU</h2></div> 
+            <div class="h2"><h2 c>MENU</h2></div>
+            @if(session()->has('message'))
+              <div class="alert alert-success text-center">
+                {{ session()->get('message') }}
+              </div>
+            @endif
             <div class="div"><img src="{{ URL::to('src/pics/1.jpg')}}"><h3>Toster 13000  so'm</h3><a href="{{ route('shop.addToCart', ['id' => 1]) }}">To Cart</a></div>
             <div class="div"><img src="{{ URL::to('src/pics/3.jpg')}}"><h3>Combo 18000 so'm</h3><a href="{{ route('shop.addToCart', ['id' => 2]) }}">To Cart</a></div>
             <div class="div"><img src="{{ URL::to('src/pics/4.jpg')}}"><h3>Donar 12000 so'm</h3><a href="{{ route('shop.addToCart', ['id' => 3]) }}">To Cart</a></div>

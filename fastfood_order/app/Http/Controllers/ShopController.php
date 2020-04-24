@@ -83,6 +83,7 @@ class ShopController extends Controller
 
         Auth::user()->orders()->save($order);
         Session::forget('cart');
+        session()->flash('message', 'Item successfully ordered');
 
         return redirect('/products');
     }

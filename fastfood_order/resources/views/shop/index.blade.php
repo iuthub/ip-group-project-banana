@@ -9,7 +9,11 @@ Fast Food
 
 <header>
     <div class="name">
-        <h2>FAST FOOD</hs>
+      @if(Auth::check())
+        <h2>FAST FOOD | {{ Auth::user()->name }}</h2>
+      @else
+        <h2>FAST FOOD</h2>
+      @endif
     </div>
     <nav class="main-nav">
         @if(!Auth::check())
