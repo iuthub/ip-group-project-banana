@@ -19,13 +19,23 @@
 	   <div class="name">
 		    <h2>FAST FOOD</hs>
 	   </div>
+	   @if(!Auth::check())
 	   <nav class="main-nav">
-		    <li><a href="index.html" class="active1">Home</a></li>
-		    <li><a href="products.html" class="active">Menu</a></li>
-        <li><a href="" class="active">Sign In</a></li>
-        <li><a href="" class="active">Purchased</a></li>
-		    <li><a href="" class="active">Contact Us</a></li>
+		    <li><a href="{{ route('shop.index') }}" class="active1">Home</a></li>
+		    <li><a href="{{ route('shop.products') }}" class="active">Menu</a></li>
+        <li><a href="" class="active" data-toggle="modal" data-target="#Login">
+        Sign In</a></li>
+        <li><a href="{{ route('register') }}" class="active">Sign Up</a></li>
+        </nav>
+      @else
+      <nav class="main-nav">
+        <li><a href="{{ route('shop.index') }}" class="active1">Home</a></li>
+        <li><a href="{{ route('shop.products') }}" class="active">Menu</a></li>
+        <li><a href="{{ route('logout') }}" class="active">Sign Out</a></li>
+        <li><a href="{{ route('user.profile') }}" class="active">Profile</a></li>
+        <li><a href="{{ route('user.admin') }}" class="active">Admin</a></li>
 	   </nav>
+     @endif
 </header>
 
        <div class="cover">
@@ -39,12 +49,13 @@
        <div class="contact">
             <h3>Keep in Touch with us</h3>
                <p>We are available 24/7 by fax, e-mail or by phone. You can also use our quick contact form to ask a question about our services that we offer on a regular basis. We would be pleased to answer your questions</p>
-              <form action="">
-                 <input type="text" placeholder="Name">
-                 <input type="email" placeholder="Email">
-                 <input type="text" placeholder="Phone number">
-                 <textarea name="" rows="10" placeholder="Message"></textarea>
-                 <button>Send</button>
+              <form action="{{ route('shop.contact.send') }}" method="POST">
+                @csrf
+                 <input type="text" placeholder="Name" name='name'>
+                 <input type="email" placeholder="Email" name='email'>
+                 <input type="text" placeholder="Phone number" name='phone'>
+                 <textarea rows="10" placeholder="Message" name='message'></textarea>
+                 <button type='submit' name='send'>Send</button>
               </form>
        </div>
 

@@ -79,8 +79,13 @@ Route::get('/admin/delete/{id}', [
 ]);
 
 Route::get('/contact', [
-	'uses' => 'ShopController@contact',
+	'uses' => 'MailController@index',
 	'as' => 'shop.contact',
+]);
+
+Route::post('/contact/send', [
+	'uses' => 'MailController@send',
+	'as' => 'shop.contact.send',
 ]);
 
 
