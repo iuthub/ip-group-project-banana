@@ -53,7 +53,7 @@ Cart
 				<div class="col-sm-6 col-md-6">
 					<form action="{{route('shop.store')}}" method="POST">
 						@csrf
-						<input type="text" name='address' class="form-control" placeholder="Enter delivery address">
+						<input type="text" name='address' class="form-control" placeholder="Enter delivery address" required>
 					<button type='submit' class="btn btn-success my-2">Order</button>
 					</form>
 					<a href="{{ route('user.dismiss') }}" class="btn btn-danger">Dismiss</a>
