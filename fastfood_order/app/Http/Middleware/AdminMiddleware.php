@@ -16,15 +16,23 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::user()->role_id == 1)
+        if(Auth::check())
         {
-            return $next($request);
+            if(Auth::user()->role_id == 1)
+            {
+                return $next($request);
+            }
+            else
+            {
+                abort(401, "The user is not admin");
+                
+            }
         }
         else
         {
             abort(401, "The user is not admin");
-            
         }
+
         
     }
 }

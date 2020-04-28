@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,27 +12,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('shop.index');
-// });
 
-// Route::get('/products', function () {
-//     return view('shop.products');
-// });
 
 Route::get('/', [
 	'uses' => 'ShopController@index',
+	// 'middleware' => 'frame',
 	'as' => 'shop.index']);
 
 Route::get('/products', [
 	'uses' => 'ShopController@products',
+	// 'middleware' => 'frame',
 	'as' => 'shop.products']);
 
 Auth::routes();
-
-// Route::get('/home', [
-// 	'uses' => 'HomeController@index',
-// 	'as' => 'home']);
 
 Route::get('/cart', [
 	'uses' => 'CartController@index',

@@ -33,7 +33,6 @@ Cart
 								<strong>{{ $product['item']['name'] }}</strong>
 								<span class="label label-success">{{ $product['price'] }}</span>
 								so'm
-								<a href="{{-- {{ route('') }} --}}"><button class="btn-primary btn-xs float-right">--</button></a>
 							</li>
 						@endforeach
 
