@@ -15,11 +15,10 @@ Menu
 	<nav class="main-nav">
     @if(!Auth::check())
   		<li><a href="{{ route('shop.index') }}" class="active1">Home</a></li>
-      <li><a href="{{ route('login') }}" class="active">Sign In</a></li>
-      <li><a href="{{ route('register') }}" class="active">Sign Up</a></li>
-  		<li><a href="" class="active">Contact Us</a></li>
       <li><a href="" class="active" data-toggle="modal" data-target="#Login">
       Sign In</a></li>
+      <li><a href="{{ route('register') }}" class="active">Sign Up</a></li>
+      <li><a href="{{ route('shop.contact') }}" class="active">Contact Us</a></li>
     @else
       <li><a href="{{ route('shop.index') }}" class="active1">Home</a></li>
       <li><a href="{{ route('logout') }}" class="active">Sign Out</a></li>
@@ -32,8 +31,6 @@ Menu
 </header>
 
 <main>
-    {{-- <div class="row">
-      <div class="col-md-4"> --}}
         @if(!Auth::check())
          <div class="gallery">
             <div class="h2"><h2 c>MENU</h2></div> 
@@ -76,38 +73,7 @@ Menu
             <div class="clear"></div>
 
         @endif
-{{--         </div>
-    </div> --}}
 
-        
-
-  <!-- <div class="gallery">
-      <h3>MANU</h3>
-      <div class="block">
-          <img src="1.jpg">
-          <div class="text">
-                <i>First</i>
-                <h4>SWORD</h4>
-                <a href="">PURCHASE</a>
-          </div>
-      </div>
-      <div class="block">
-          <img src="1.jpg">
-          <div class="text">
-                <i>First</i>
-                <h4>SWORD</h4>
-                <a href="">PURCHASE</a>
-          </div>
-      </div>
-      <div class="block">
-          <img src="1.jpg">
-          <div class="text">
-                <i>First</i>
-                <h4>SWORD</h4>
-                <a href="">PURCHASE</a>
-          </div>
-      </div>
-  </div> -->
 
 </main> 
 
@@ -140,15 +106,7 @@ Menu
 </div>
 
 <div class="contacts">
-      <!--  <div class="contact">
-            <h3>Contact Us</h3>
-              <form action="">
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="text" placeholder="Message">
-                <button>Send</button>
-              </form>
-       </div> -->
+      
        <div class="clear"></div>
             <div class="coninf">
                 <h3>Contacts</h3>
