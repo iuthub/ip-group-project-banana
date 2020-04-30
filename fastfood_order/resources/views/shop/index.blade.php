@@ -100,12 +100,7 @@ Fast Food
                 <p>Phone Number: +99891 155 30 55 </p>
                 <p>Location: Mustaqqilik Avenue</p>
             </div>
-       <div class="iframe">
-                <iframe src="" width="100%" height="316" frameborder="0" style="border:0" allowfullscreen>
-                </iframe>
-      </div>
             <nav class="clear"></nav>
-
 </div>
 <footer>
     <p> Fast food © 2020.Privacy Policy</p>
