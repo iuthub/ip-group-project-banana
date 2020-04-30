@@ -116,10 +116,6 @@
                   <p>Phone Number: +99891 155 30 55 </p>
                   <p>Location: Mustaqqilik Avenue</p>
             </div>
-        <div class="iframe">
-                <iframe src="https://www.google.ru/maps/place/Inha+University+in+Tashkent/@41.338525,69.332336,17z/data=!3m1!4b1!4m5!3m4!1s0x38aef48a8ed4d0e9:0x3772abeffc72e7b8!8m2!3d41.338525!4d69.33453" width="100%" height="316" frameborder="0" style="border:0" allowfullscreen>
-                </iframe>
-        </div>
             <nav class="clear"></nav>
 
   </div>

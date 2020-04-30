@@ -256,12 +256,12 @@ header li a{
 	border-bottom: 5px solid #222;
 }
 .contacts>div{
-	width: 50%;
-	float: left;
+	width: 100%;
+	
 }
 .contacts .coninf{
     padding: 30px;
-    box-sizing: border-box;
+    
 }
 .contacts .contact{
     padding: 80px;
@@ -276,6 +276,7 @@ header li a{
 	border-top: 10px solid #222;
 	text-align: center;
 	padding: 10px;
+	width: 100%;
 }
 .contacts .coninf p{
     text-align: center;

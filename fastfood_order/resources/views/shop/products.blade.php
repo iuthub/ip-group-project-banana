@@ -115,12 +115,7 @@ Menu
                 <p>Phone Number: +99891 155 30 55 </p>
                 <p>Location: Mustaqqilik Avenue</p>
             </div>
-       <div class="iframe">
-                <iframe src="https://www.google.com/maps/place/Street77/@41.3152126,69.2894744,18z/data=!3m1!4b1!4m5!3m4!1s0x38aef4d376395311:0x2f977e6f6b98ad7!8m2!3d41.3152106!4d69.2905714" width="100%" height="316" frameborder="0" style="border:0" allowfullscreen>
-                </iframe>
-      </div>
             <nav class="clear"></nav>
-
 </div>
 
 <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" >
