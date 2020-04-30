@@ -60,10 +60,15 @@ Cart
 			</div>
 
 		@else
-			<div class="row justify-content-center">
-				<div class="col-sm-6 col-md-6" >
-					<h2>No items in cart</h2>
-				</div>
+			<div class="row justify-content-center my-5">
+				{{-- <div class="col-sm-3 col-md-3" > --}}
+					<div class="card card-default">
+						<div class="card-header">
+							<h2>Cart is Empty</h2>
+						</div>
+					</div>
+					
+				{{-- </div> --}}
 			</div>
 		</div>
 	@endif

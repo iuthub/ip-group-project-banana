@@ -26,6 +26,8 @@ Route::get('/products', [
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/cart', [
 	'uses' => 'CartController@index',
 	'as' => 'cart.index']);
