@@ -21,6 +21,11 @@ Admin
 
 
 <div class="container">
+	@if(session()->has('message'))
+              <div class="alert alert-success text-center">
+                {{ session()->get('message') }}
+              </div>
+            @endif
 	<div class="row justify-content-center my-2">
 		<div class="col-md-8">
 			<div class="card card-default">

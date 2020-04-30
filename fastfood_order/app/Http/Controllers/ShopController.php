@@ -60,6 +60,7 @@ class ShopController extends Controller
         $cart->add($product, $product->id);
 
         $request->session()->put('cart', $cart);
+        session()->flash('message', 'Item is added to cart');
         return redirect()->route('shop.products');
     }
 

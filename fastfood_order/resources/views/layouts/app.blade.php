@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-black shadow-sm cmd">
             <div class="container" style="background-color: black; border: solid black 5px">
                 <a class="navbar-brand" href="{{ url('/') }}" style="color: red; font-size: 30px">
-                    Sign up
+                    Menu
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

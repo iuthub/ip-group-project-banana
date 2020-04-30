@@ -24,7 +24,7 @@ background-color: black;
 }
 
 input[type=text], input[type=password], input[type=email]{
-    color: red;
+    color: black;
     background-color: white;
     opacity: 0.9
 }
