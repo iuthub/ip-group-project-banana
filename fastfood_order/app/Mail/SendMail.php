@@ -31,6 +31,6 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->from('alhafiz@mail.ru')->subject('New Customer')->view('shop.email')->with('data', $this->data);
+        return $this->from('no-feedback@mail.com')->subject('New Customer')->view('shop.email')->with('data', $this->data);
     }
 }

@@ -29,7 +29,7 @@ class MailController extends Controller
 			'phone' => $request->phone,
 			'message' => $request->message,
 		);
-		Mail::to('rasulovjavohir2@gmail.com')->send(new SendMail($data));
+		Mail::to('a.muzrafkulov@student.inha.uz')->send(new SendMail($data));
 
 		session()->flash('message', 'Email sent successfully');
 
