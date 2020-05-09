@@ -120,6 +120,8 @@
 
   </div>
 
+
+
   <footer>
        <p>  Fast food © 2020. Founded ProgBanana</p>
   </footer>
@@ -131,3 +133,41 @@
   <script src="{{ URL::to('src/js/bootstrap.min.js') }}"></script>
 
 </h2>
+
+<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Fast Food</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="text-center mt-3">
+      <h3>Login</h3>
+        </div>
+        <form method="POST" action="{{ route('login') }}">
+                        @csrf
+      <div class="modal-body my-4 text-center">
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+        <input type="email" name='email' id='email' class="form-control @error('email') is-invalid @enderror">
+        @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+        <input type="password" name='password' id='password' class='form-control'>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type='submit' class="btn btn-primary">Login</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
